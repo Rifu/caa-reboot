@@ -1,0 +1,91 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$shadowItem: 0 3px 3px rgba(0,0,0,.50);
+$shadowItemInverse: 0 -3px 3px rgba(0,0,0,.50);
+$boxShadow: 0 -20px 20px -20px rgba(0,0,0,.80);
+$font-size-base: 12px;
+@import "bootstrap";
+
+// Drop shadows
+@mixin box-shadow {
+  -webkit-box-shadow: $shadowItem;
+     -moz-box-shadow: $shadowItem;
+          box-shadow: $shadowItem;
+}
+@mixin header-box-shadow{
+  -webkit-box-shadow: inset $boxShadow;
+     -moz-box-shadow: inset $boxShadow;
+          box-shadow: inset $boxShadow;  
+}
+@mixin inner-box-shadow{
+  -webkit-box-shadow: inset $shadowItem;
+   -moz-box-shadow: inset $shadowItem;
+        box-shadow: inset $shadowItem;
+}
+@mixin upper-box-shadow{
+  -webkit-box-shadow: $shadowItemInverse;
+     -moz-box-shadow: $shadowItemInverse;
+          box-shadow: $shadowItemInverse;
+}
+@mixin clear-shadow{
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+body{
+  background: #1d1d1d;
+}
+h1, h2, h3{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#announcement{
+  height: 400px;
+}
+.announcement-content{
+  position: relative;
+  width: 100%;
+  .announcement-content-wrapper{
+    position: absolute;
+    top: 100px;
+    left: 70px;
+  }
+  .announcement-title{
+    background: rgba(255,255,0,0.8);
+    padding: 5px;
+  }
+  .announcement-details{
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 5px;
+    display: inline-block;
+  }
+}
+.event-block{
+  height: 180px;
+  &:hover{
+    height: 200px;
+  }
+  transition: height 0.5s;
+  @include header-box-shadow;
+}
+.event-content{
+  position: relative;
+  width: 100%;
+  .event-content-wrapper{
+    position: absolute;
+    top: 55px;
+    left: 70px;
+  }
+  .event-title{
+    background: rgba(255,255,0,0.8);
+    padding: 5px;
+  }
+  .event-details{
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 5px;
+    display: inline-block;
+  }
+}
