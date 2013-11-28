@@ -1,21 +1,3 @@
-GIT
-  remote: git://github.com/gregbell/active_admin.git
-  revision: 2b93ee76407d594625274972f84af07fc67dc5d2
-  specs:
-    activeadmin (1.0.0.pre)
-      arbre (~> 1.0)
-      bourbon
-      coffee-rails
-      devise (~> 3.0)
-      formtastic (~> 2.3.0.rc2)
-      inherited_resources (~> 1.3)
-      jquery-rails
-      jquery-ui-rails
-      kaminari (~> 0.15)
-      rails (>= 3.2, < 4.1)
-      ransack (~> 1.0)
-      sass-rails
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,6 +18,17 @@ GEM
       activeadmin (>= 0.4.0)
       ejs
       rails (>= 3.0.0)
+    activeadmin (0.6.2)
+      arbre (~> 1.0)
+      bourbon (>= 1.0.0, < 4)
+      devise (>= 1.5.4, < 4)
+      formtastic (~> 2.0)
+      inherited_resources (~> 1.3)
+      jquery-rails (>= 1.0.0, < 3)
+      kaminari (~> 0.13)
+      meta_search (~> 1.0)
+      rails (>= 3.0.0, < 4)
+      sass (~> 3.1)
     activemodel (3.2.13)
       activesupport (= 3.2.13)
       builder (~> 3.0.0)
@@ -83,11 +76,11 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
-    formtastic (2.3.0.rc2)
+    formtastic (2.2.1)
       actionpack (>= 3.0)
     friendly_id (4.0.10.1)
       activerecord (>= 3.0, < 4.0)
-    haml (4.0.3)
+    haml (4.0.4)
       tilt
     haml-rails (0.4)
       actionpack (>= 3.1, < 4.1)
@@ -103,11 +96,9 @@ GEM
       has_scope (~> 0.6.0.rc)
       responders (~> 1.0.0.rc)
     journey (1.0.4)
-    jquery-rails (3.0.4)
+    jquery-rails (2.3.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (4.1.0)
-      railties (>= 3.1.0)
     json (1.8.1)
     kaminari (0.15.0)
       actionpack (>= 3.0.0)
@@ -115,6 +106,11 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_search (1.1.3)
+      actionpack (~> 3.1)
+      activerecord (~> 3.1)
+      activesupport (~> 3.1)
+      polyamorous (~> 0.5.0)
     mime-types (1.25.1)
     multi_json (1.8.2)
     orm_adapter (0.5.0)
@@ -123,8 +119,8 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    polyamorous (0.6.4)
-      activerecord (>= 3.0)
+    polyamorous (0.5.0)
+      activerecord (~> 3.0)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -149,10 +145,6 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.1.0)
-    ransack (1.1.0)
-      actionpack (>= 3.0)
-      activerecord (>= 3.0)
-      polyamorous (~> 0.6.0)
     rdoc (3.12.2)
       json (~> 1.4)
     responders (1.0.0)
@@ -168,9 +160,9 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.8)
-    thin (1.5.1)
+    thin (1.6.1)
       daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
+      eventmachine (>= 1.0.0)
       rack (>= 1.0.0)
     thor (0.18.1)
     thread_safe (0.1.3)
@@ -191,7 +183,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_admin_editor
-  activeadmin!
+  activeadmin
   bootstrap-sass (~> 3.0.2.0)
   coffee-rails (~> 3.2.1)
   friendly_id (~> 4.0.9)
