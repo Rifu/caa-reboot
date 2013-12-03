@@ -4,7 +4,10 @@
 $shadowItem: 0 3px 3px rgba(0,0,0,.50);
 $shadowItemInverse: 0 -3px 3px rgba(0,0,0,.50);
 $boxShadow: 0 -20px 20px -20px rgba(0,0,0,.80);
+$headlineBG: rgba(255,255,0,0.8);
+$subheaderBG: rgba(0,0,0,0.8);
 $font-size-base: 12px;
+$darkBG: #1d1d1d;
 @import "bootstrap";
 
 // Drop shadows
@@ -34,14 +37,19 @@ $font-size-base: 12px;
           box-shadow: none;
 }
 body{
-  background: #1d1d1d;
+  background: $darkBG;
 }
 h1, h2, h3{
   margin-top: 0;
   margin-bottom: 0;
 }
+#news-block{
+}
 #announcement{
-  height: 400px;
+  height: 560px;
+  width: 800px;
+  float: left;
+  @include box-shadow;
 }
 .announcement-content{
   position: relative;
@@ -52,23 +60,26 @@ h1, h2, h3{
     left: 70px;
   }
   .announcement-title{
-    background: rgba(255,255,0,0.8);
+    background: $headlineBG;
     padding: 5px;
   }
   .announcement-details{
-    background: rgba(0,0,0,0.8);
+    background: $subheaderBG;
     color: white;
     padding: 5px;
     display: inline-block;
   }
 }
+.events{
+  z-index: 1;
+  float:right;
+  margin-left: 10px;
+}
 .event-block{
   height: 180px;
-  &:hover{
-    height: 200px;
-  }
-  transition: height 0.5s;
-  @include header-box-shadow;
+  width: 330px;
+  margin-bottom: 10px;
+  @include box-shadow;
 }
 .event-content{
   position: relative;
@@ -79,11 +90,11 @@ h1, h2, h3{
     left: 70px;
   }
   .event-title{
-    background: rgba(255,255,0,0.8);
+    background: $headlineBG;
     padding: 5px;
   }
   .event-details{
-    background: rgba(0,0,0,0.8);
+    background: $subheaderBG;
     color: white;
     padding: 5px;
     display: inline-block;
