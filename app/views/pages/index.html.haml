@@ -1,11 +1,21 @@
-#news-block
-  #announcement{ :style => "background-image: url('#{@event.event_image.url}')"}
-    .announcement-content
-      .announcement-content-wrapper
-        .announcement-details
-          These are things we need!
-        .announcement-title
-          more things we need!
+#news-block.clearfix
+  #announcement-carousel{ :class => "carousel slide", :data => {'ride' => "carousel"}}
+    %ol{ :class => "carousel-indicators"}
+      %li{ :data => {'target' => '#announcement-carousel','slide-to' => "0"}, :class => "active" }
+      %li{ :data => {'target' => '#announcement-carousel','slide-to' => "1" }}
+      %li{ :data => {'target' => '#announcement-carousel','slide-to' => "2" }}
+    .carousel-inner
+      .item.active
+        #announcement{ :style => "background-image: url('#{@event.event_image.url}')"}
+      .item
+        #announcement{ :style => "background-image: url('#{@event.event_image.url}')"}
+      .item
+        #announcement{ :style => "background-image: url('#{@event.event_image.url}')"}
+    %a{:class => "left carousel-control", :href => "#announcement-carousel", :data => {'slide' => "prev"}}
+      %span{:class => "glyphicon glyphicon-chevron-left"}
+    %a{:class => "right carousel-control", :href => "#announcement-carousel", :data => {'slide' => "next"}}
+      %span{:class => "glyphicon glyphicon-chevron-right"} 
+
   .events
     #showing.event-block{ :style => "background-image: url('#{@event.event_image_thin.url}')" }
       .event-content
@@ -43,3 +53,20 @@
             = "#{@event.event_start_time.strftime('%l:%M %p')}-#{@event.event_end_time.strftime('%l:%M %p')} @ #{@event.event_location}"
           .event-title
             %h2= @event.title
+#main-content
+  #news-posts
+    - @posts.each do |post|
+      .news-post
+        .post-title
+          %h2=post.title
+        .post-details
+          -if post.author.empty?
+            - post_author = "Anonymous"
+          -else
+            - post_author = post.author
+          = "Posted on #{post.publish_date.strftime('%^a %m/%d/%y')} by #{post_author }"
+        .post-text
+          =post.text.html_safe
+        .post-author
+          =post.author
+  #something

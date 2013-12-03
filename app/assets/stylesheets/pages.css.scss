@@ -6,6 +6,7 @@ $shadowItemInverse: 0 -3px 3px rgba(0,0,0,.50);
 $boxShadow: 0 -20px 20px -20px rgba(0,0,0,.80);
 $headlineBG: rgba(255,255,255,0.6);
 $hoveredBG: rgba(255,255,255,0.8);
+$showingBG: rgba(86,193,236, 0.6);
 $subheaderBG: rgba(0,0,0,0.6);
 $hoveredSub: rgba(0,0,0,0.8);
 $font-size-base: 12px;
@@ -39,19 +40,34 @@ $darkBG: #1d1d1d;
           box-shadow: none;
 }
 body{
-  background: $darkBG;
+  background: white;
   text-shadow: #333 1px 1px 1px;
   color: white;
+}
+.container{
+  min-width: 1170px;
+}
+.navbar-default{
+  text-shadow: none;
 }
 h1, h2, h3{
   margin-top: 0;
   margin-bottom: 0;
+}
+#content-container{
+  padding-top: 60px;
 }
 #news-block{
 }
 #announcement{
   height: 560px;
   width: 800px;
+  float: left;
+  @include box-shadow;
+}
+#announcement-carousel{
+  width: 800px;
+  height: 560px;
   float: left;
   @include box-shadow;
 }
@@ -86,6 +102,30 @@ h1, h2, h3{
   margin-bottom: 10px;
   @include box-shadow;
 }
+#main-content{
+  color: $text-color;
+  text-shadow: none;
+  #news-posts{
+    width: 800px;
+    overflow: hidden;
+  }
+  .news-post{
+    border: 1px solid #cecece;
+    padding: 10px;
+    @include box-shadow;
+    margin-bottom: 10px;
+  }
+  .post-title{
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+  }
+  .post-text{
+    padding-top: 10px;
+  }
+  .post-details{
+    font-size: 10px;
+  }
+}
 .event-content{
   position: relative;
   width: 100%;
@@ -115,18 +155,5 @@ h1, h2, h3{
     //background: $subheaderBG;
     color: white;
     display: inline-block;
-  }
-  &:hover{
-    .event-details-top{
-      top: -20px;
-    }
-    .event-title{
-      //background: $hoveredBG;
-      transition: background 0.5s;
-    }
-    .event-details{
-      //background: $hoveredSub;
-      transition: background 0.5s;
-    }
   }
 }

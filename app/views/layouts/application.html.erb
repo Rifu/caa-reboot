@@ -7,6 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_url %>">Cal Animage Alpha</a>
+    </div>
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Showing Schedule</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">About Us</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://www.facebook.com/groups/calanimagealpha">Facebook Group</a></li>
+            <li><a href="https://calmail.berkeley.edu/manage/list/listinfo/ucbanimage@lists.berkeley.edu">Mailing List</a></li>
+            <li><a href="https://twitter.com/calanimagealpha">Twitter</a></li>
+            <li><a href="http://forum.calanimagealpha.com/">Forums</a></li>
+            <li><a href="http://calanimagealpha.com/chat">IRC Chatroom</a></li>
+          </ul>
+        </li>
+      </ul>
+  </div>
+</nav>
 <div class="container" id="content-container">
 <%= yield %>
 </div>
