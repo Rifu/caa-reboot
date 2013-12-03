@@ -9,24 +9,37 @@
   .events
     #showing.event-block{ :style => "background-image: url('#{@event.event_image_thin.url}')" }
       .event-content
-        .event-type
-          %h2 NEXT SHOWING
+        .event-details-top
+          .event-type
+            %h3 NEXT SHOWING
+          .event-date
+            = "#{@event.event_date.strftime('%^a %m/%d/%y')}"
         .event-content-wrapper
           .event-details
             = "#{@event.event_start_time.strftime('%l:%M %p')}-#{@event.event_end_time.strftime('%l:%M %p')} @ #{@event.event_location}"
           .event-title
-            %h1= @event.title
+            %h2= @event.title
     #manga-social.event-block{ :style => "background-image: url('#{@event.event_image_thin.url}')" }
       .event-content
+        .event-details-top
+          .event-type
+            %h3 MANGA SOCIAL
+          .event-date
+            = "#{@event.event_date.strftime('%^a %m/%d/%y')}"
         .event-content-wrapper
           .event-details
             = "#{@event.event_start_time.strftime('%l:%M %p')}-#{@event.event_end_time.strftime('%l:%M %p')} @ #{@event.event_location}"
           .event-title
-            %h1= @event.title
+            %h2= @event.title
     #game-night.event-block{ :style => "background-image: url('#{@event.event_image_thin.url}')" }
       .event-content
+        .event-details-top
+          .event-type
+            %h3 GAME NIGHT
+          .event-date
+            = "#{@event.event_date.strftime('%^a %m/%d/%y')}"
         .event-content-wrapper
           .event-details
             = "#{@event.event_start_time.strftime('%l:%M %p')}-#{@event.event_end_time.strftime('%l:%M %p')} @ #{@event.event_location}"
           .event-title
-            %h1= @event.title
+            %h2= @event.title

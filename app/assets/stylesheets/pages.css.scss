@@ -4,8 +4,10 @@
 $shadowItem: 0 3px 3px rgba(0,0,0,.50);
 $shadowItemInverse: 0 -3px 3px rgba(0,0,0,.50);
 $boxShadow: 0 -20px 20px -20px rgba(0,0,0,.80);
-$headlineBG: rgba(255,255,0,0.8);
-$subheaderBG: rgba(0,0,0,0.8);
+$headlineBG: rgba(255,255,255,0.6);
+$hoveredBG: rgba(255,255,255,0.8);
+$subheaderBG: rgba(0,0,0,0.6);
+$hoveredSub: rgba(0,0,0,0.8);
 $font-size-base: 12px;
 $darkBG: #1d1d1d;
 @import "bootstrap";
@@ -38,6 +40,8 @@ $darkBG: #1d1d1d;
 }
 body{
   background: $darkBG;
+  text-shadow: #333 1px 1px 1px;
+  color: white;
 }
 h1, h2, h3{
   margin-top: 0;
@@ -54,6 +58,7 @@ h1, h2, h3{
 .announcement-content{
   position: relative;
   width: 100%;
+  max-height: 50%;
   .announcement-content-wrapper{
     position: absolute;
     top: 100px;
@@ -84,19 +89,44 @@ h1, h2, h3{
 .event-content{
   position: relative;
   width: 100%;
+  height: 100%;
+  overflow: hidden;
   .event-content-wrapper{
     position: absolute;
-    top: 55px;
-    left: 70px;
+    bottom: 0px;
+    left: 0px;
+    padding: 5px;
+    width: 100%;
+    overflow: hidden; 
+    background: $subheaderBG;
+  }
+  .event-details-top{
+    position: relative;
+    width: 100%;
+    top:0;
+    background: $subheaderBG;
+    padding-left: 5px;
+    transition: top 0.5s;
   }
   .event-title{
-    background: $headlineBG;
-    padding: 5px;
+    //background: $headlineBG;
   }
   .event-details{
-    background: $subheaderBG;
+    //background: $subheaderBG;
     color: white;
-    padding: 5px;
     display: inline-block;
+  }
+  &:hover{
+    .event-details-top{
+      top: -20px;
+    }
+    .event-title{
+      //background: $hoveredBG;
+      transition: background 0.5s;
+    }
+    .event-details{
+      //background: $hoveredSub;
+      transition: background 0.5s;
+    }
   }
 }
