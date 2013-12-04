@@ -19,7 +19,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: /var/www/caa/shared/sqlite/db/production.sqlite3
+  adapter: postgresql
+  encoding: utf8
+  database: caa_production
   pool: 5
-  timeout: 5000
+  username: ruuri_db
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: localhost
