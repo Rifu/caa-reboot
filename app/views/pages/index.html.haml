@@ -6,29 +6,46 @@
       %li{ :data => {'target' => '#announcement-carousel','slide-to' => "2" }}
     .carousel-inner
       .item.active
-        #announcement{ :style => "background-image: url('#{@event.event_image.url}')"}
+        %a{:href => "#{@site.carousel_one_href}"}
+          #announcement{ :style => "background-image: url('#{@site.default_carousel_one_image.url}')", :title => "#{@site.carousel_one_title}"}
       .item
-        #announcement{ :style => "background-image: url('#{@event.event_image.url}')"}
+        %a{:href => "#{@site.carousel_two_href}"}
+          #announcement{ :style => "background-image: url('#{@site.default_carousel_two_image.url}')", :title => "#{@site.carousel_two_title}"}
       .item
-        #announcement{ :style => "background-image: url('#{@event.event_image.url}')"}
+        %a{:href => "#{@site.carousel_three_href}"}
+          #announcement{ :style => "background-image: url('#{@site.default_carousel_three_image.url}')", :title => "#{@site.carousel_three_title}"}
     %a{:class => "left carousel-control", :href => "#announcement-carousel", :data => {'slide' => "prev"}}
       %span{:class => "glyphicon glyphicon-chevron-left"}
     %a{:class => "right carousel-control", :href => "#announcement-carousel", :data => {'slide' => "next"}}
       %span{:class => "glyphicon glyphicon-chevron-right"} 
 
   .events
-    #showing.event-block{ :style => "background-image: url('#{@event.event_image_thin.url}')" }
-      .event-content
-        .event-details-top
-          .event-type
-            %h3 NEXT SHOWING
-          .event-date
-            = "#{@event.event_date.strftime('%^a %m/%d/%y')}"
-        .event-content-wrapper
-          .event-details
-            = "#{@event.event_start_time.strftime('%l:%M %p')}-#{@event.event_end_time.strftime('%l:%M %p')} @ #{@event.event_location}"
-          .event-title
-            %h2= @event.title
+    -if !@showing.blank?
+      #showing.event-block{ :style => "background-image: url('#{@event.event_image_thin.url}')" }
+        .event-content
+          .event-details-top
+            .event-type
+              %h3 NEXT SHOWING
+            .event-date
+              = "#{@event.event_date.strftime('%^a %m/%d/%y')}"
+          .event-content-wrapper
+            .event-details
+              = "#{@event.event_start_time.strftime('%l:%M %p')}-#{@event.event_end_time.strftime('%l:%M %p')} @ #{@event.event_location}"
+            .event-title
+              %h2= @event.title
+    -else
+      #showing.event-block{ :style => "background-image: url('#{@site.default_showing_image.url}')" }
+        .event-content
+          .event-details-top
+            .event-type
+              %h4 NEXT SHOWING
+            .event-date
+              = "TBD"
+          .event-content-wrapper
+            .event-details
+              = "#{@site.default_showing_time.strftime('%l:%M %p')}-#{@site.default_showing_end_time.strftime('%l:%M %p')} @ #{@site.default_showing_location}"
+            .event-title
+              %h3= @site.default_showing_description
     #manga-social.event-block{ :style => "background-image: url('#{@event.event_image_thin.url}')" }
       .event-content
         .event-details-top
@@ -67,6 +84,4 @@
           = "Posted on #{post.publish_date.strftime('%^a %m/%d/%y')} by #{post_author }"
         .post-text
           =post.text.html_safe
-        .post-author
-          =post.author
   #something

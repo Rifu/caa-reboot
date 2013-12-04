@@ -6,7 +6,7 @@ ActiveAdmin.register Event do
   form do |f|
     f.inputs "Details" do
       f.input :title
-      f.input :event_type
+      f.input :event_type, :as => :select, :collection => [['Showing', 'showing'], ['Manga Social', 'mangasocial'], ['Game Night', 'gamenight']]
       f.input :event_date
       f.input :event_start_time, :as => :time_picker
       f.input :event_end_time, :as => :time_picker

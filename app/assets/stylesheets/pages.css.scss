@@ -4,10 +4,10 @@
 $shadowItem: 0 3px 3px rgba(0,0,0,.50);
 $shadowItemInverse: 0 -3px 3px rgba(0,0,0,.50);
 $boxShadow: 0 -20px 20px -20px rgba(0,0,0,.80);
-$headlineBG: rgba(255,255,255,0.6);
+$headlineBG: rgba(255,255,255,0.4);
 $hoveredBG: rgba(255,255,255,0.8);
-$showingBG: rgba(86,193,236, 0.6);
-$subheaderBG: rgba(0,0,0,0.6);
+$showingBG: rgba(86,193,236, 0.4);
+$subheaderBG: rgba(0,0,0,0.4);
 $hoveredSub: rgba(0,0,0,0.8);
 $font-size-base: 12px;
 $darkBG: #1d1d1d;
@@ -50,7 +50,7 @@ body{
 .navbar-default{
   text-shadow: none;
 }
-h1, h2, h3{
+h1, h2, h3, h4{
   margin-top: 0;
   margin-bottom: 0;
 }

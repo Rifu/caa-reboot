@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131203184407) do
+ActiveRecord::Schema.define(:version => 20131204162629) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -73,6 +73,56 @@ ActiveRecord::Schema.define(:version => 20131203184407) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.date     "publish_date"
+  end
+
+  create_table "sites", :force => true do |t|
+    t.string   "title"
+    t.string   "default_showing_location"
+    t.string   "default_showing_description"
+    t.string   "default_social_location"
+    t.string   "default_social_description"
+    t.string   "default_game_night_location"
+    t.string   "default_game_night_description"
+    t.string   "carousel_one_href"
+    t.string   "carousel_two_href"
+    t.string   "carousel_three_href"
+    t.boolean  "default_site",                              :default => false
+    t.datetime "created_at",                                                   :null => false
+    t.datetime "updated_at",                                                   :null => false
+    t.string   "default_showing_image_file_name"
+    t.string   "default_showing_image_content_type"
+    t.integer  "default_showing_image_file_size"
+    t.datetime "default_showing_image_updated_at"
+    t.string   "default_social_image_file_name"
+    t.string   "default_social_image_content_type"
+    t.integer  "default_social_image_file_size"
+    t.datetime "default_social_image_updated_at"
+    t.string   "default_game_night_image_file_name"
+    t.string   "default_game_night_image_content_type"
+    t.integer  "default_game_night_image_file_size"
+    t.datetime "default_game_night_image_updated_at"
+    t.string   "default_carousel_one_image_file_name"
+    t.string   "default_carousel_one_image_content_type"
+    t.integer  "default_carousel_one_image_file_size"
+    t.datetime "default_carousel_one_image_updated_at"
+    t.string   "default_carousel_two_image_file_name"
+    t.string   "default_carousel_two_image_content_type"
+    t.integer  "default_carousel_two_image_file_size"
+    t.datetime "default_carousel_two_image_updated_at"
+    t.string   "default_carousel_three_image_file_name"
+    t.string   "default_carousel_three_image_content_type"
+    t.integer  "default_carousel_three_image_file_size"
+    t.datetime "default_carousel_three_image_updated_at"
+    t.string   "carousel_one_title"
+    t.string   "carousel_two_title"
+    t.string   "carousel_three_title"
+    t.boolean  "show_carousel",                             :default => true
+    t.time     "default_showing_time"
+    t.time     "default_social_time"
+    t.time     "default_game_night_time"
+    t.time     "default_showing_end_time"
+    t.time     "default_social_end_time"
+    t.time     "default_game_night_end_time"
   end
 
 end

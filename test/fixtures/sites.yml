@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  default_showing_location: MyString
+  default_showing_description: MyString
+  default_social_location: MyString
+  default_social_description: MyString
+  default_game_night_location: MyString
+  default_game_night_description: MyString
+  carousel_one_href: MyString
+  carousel_two_href: MyString
+  carousel_three_href: MyString
+  default_site: false
+
+two:
+  title: MyString
+  default_showing_location: MyString
+  default_showing_description: MyString
+  default_social_location: MyString
+  default_social_description: MyString
+  default_game_night_location: MyString
+  default_game_night_description: MyString
+  carousel_one_href: MyString
+  carousel_two_href: MyString
+  carousel_three_href: MyString
+  default_site: false
