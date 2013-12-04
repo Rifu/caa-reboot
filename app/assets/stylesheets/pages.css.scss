@@ -4,10 +4,10 @@
 $shadowItem: 0 3px 3px rgba(0,0,0,.50);
 $shadowItemInverse: 0 -3px 3px rgba(0,0,0,.50);
 $boxShadow: 0 -20px 20px -20px rgba(0,0,0,.80);
-$headlineBG: rgba(255,255,255,0.4);
+$headlineBG: rgba(255,255,255,0.5);
 $hoveredBG: rgba(255,255,255,0.8);
-$showingBG: rgba(86,193,236, 0.4);
-$subheaderBG: rgba(0,0,0,0.4);
+$showingBG: rgba(86,193,236, 0.5);
+$subheaderBG: rgba(0,0,0,0.5);
 $hoveredSub: rgba(0,0,0,0.8);
 $font-size-base: 12px;
 $darkBG: #1d1d1d;
@@ -139,6 +139,7 @@ h1, h2, h3, h4{
     width: 100%;
     overflow: hidden; 
     background: $subheaderBG;
+    max-height: 47px;
   }
   .event-details-top{
     position: relative;
@@ -155,5 +156,13 @@ h1, h2, h3, h4{
     //background: $subheaderBG;
     color: white;
     display: inline-block;
+  }
+  &:hover{
+    .event-content-wrapper, .event-details-top{
+      background: $hoveredSub;
+    }
+  }
+  .event-content-wrapper, .event-details-top{
+    transition: background 0.5s;
   }
 }

@@ -20,56 +20,51 @@
       %span{:class => "glyphicon glyphicon-chevron-right"} 
 
   .events
-    -if !@showing.blank?
-      #showing.event-block{ :style => "background-image: url('#{@event.event_image_thin.url}')" }
-        .event-content
-          .event-details-top
-            .event-type
-              %h3 NEXT SHOWING
-            .event-date
-              = "#{@event.event_date.strftime('%^a %m/%d/%y')}"
-          .event-content-wrapper
-            .event-details
-              = "#{@event.event_start_time.strftime('%l:%M %p')}-#{@event.event_end_time.strftime('%l:%M %p')} @ #{@event.event_location}"
-            .event-title
-              %h2= @event.title
-    -else
-      #showing.event-block{ :style => "background-image: url('#{@site.default_showing_image.url}')" }
-        .event-content
-          .event-details-top
-            .event-type
-              %h4 NEXT SHOWING
-            .event-date
-              = "TBD"
-          .event-content-wrapper
-            .event-details
-              = "#{@site.default_showing_time.strftime('%l:%M %p')}-#{@site.default_showing_end_time.strftime('%l:%M %p')} @ #{@site.default_showing_location}"
-            .event-title
-              %h3= @site.default_showing_description
-    #manga-social.event-block{ :style => "background-image: url('#{@event.event_image_thin.url}')" }
+    #showing.event-block{ :style => "background-image: url('#{@showing_image}')" }
       .event-content
         .event-details-top
           .event-type
-            %h3 MANGA SOCIAL
+            %h4 NEXT SHOWING:
           .event-date
-            = "#{@event.event_date.strftime('%^a %m/%d/%y')}"
+            - if @showing_date.is_a?(String)
+              = @showing_date
+            - else
+              = "#{@showing_date.strftime('%^a %m/%d/%y')}"
         .event-content-wrapper
           .event-details
-            = "#{@event.event_start_time.strftime('%l:%M %p')}-#{@event.event_end_time.strftime('%l:%M %p')} @ #{@event.event_location}"
+            = "#{@showing_start_time.strftime('%l:%M %p')}-#{@showing_end_time.strftime('%l:%M %p')} @ #{@showing_location}"
           .event-title
-            %h2= @event.title
-    #game-night.event-block{ :style => "background-image: url('#{@event.event_image_thin.url}')" }
+            %h3= @showing_title
+    #social.event-block{ :style => "background-image: url('#{@social_image}')" }
       .event-content
         .event-details-top
           .event-type
-            %h3 GAME NIGHT
+            %h4 NEXT MANGA SOCIAL:
           .event-date
-            = "#{@event.event_date.strftime('%^a %m/%d/%y')}"
+            - if @social_date.is_a?(String)
+              = @social_date
+            - else
+              = "#{@social_date.strftime('%^a %m/%d/%y')}"
         .event-content-wrapper
           .event-details
-            = "#{@event.event_start_time.strftime('%l:%M %p')}-#{@event.event_end_time.strftime('%l:%M %p')} @ #{@event.event_location}"
+            = "#{@social_start_time.strftime('%l:%M %p')}-#{@social_end_time.strftime('%l:%M %p')} @ #{@social_location}"
           .event-title
-            %h2= @event.title
+            %h3= @social_title
+    #game-night.event-block{ :style => "background-image: url('#{@game_night_image}')" }
+      .event-content
+        .event-details-top
+          .event-type
+            %h4 NEXT GAME NIGHT:
+          .event-date
+            - if @game_night_date.is_a?(String)
+              = @game_night_date
+            - else
+              = "#{@game_night_date.strftime('%^a %m/%d/%y')}"
+        .event-content-wrapper
+          .event-details
+            = "#{@game_night_start_time.strftime('%l:%M %p')}-#{@game_night_end_time.strftime('%l:%M %p')} @ #{@game_night_location}"
+          .event-title
+            %h3= @game_night_title
 #main-content
   #news-posts
     - @posts.each do |post|
