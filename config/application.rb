@@ -61,5 +61,10 @@ module CaaReboot
 
     # ActiveAdmin precompile hack
     config.assets.precompile += %w( active_admin.css active_admin/print.css active_admin.js )
+    config.assets.precompile += [
+                                  'active_admin/editor.css',
+                                  'active_admin/editor/wysiwyg.css',
+                                  'active_admin/editor.js'
+                                ]
   end
 end
