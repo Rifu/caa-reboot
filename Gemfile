@@ -24,7 +24,7 @@ end
 
 # Custom gems
 gem 'bootstrap-sass', '~> 3.0.2.0'
-gem 'activeadmin'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'active_admin_editor'
 gem 'friendly_id', '~> 4.0.9'
 gem 'paperclip', '~> 3.0'
