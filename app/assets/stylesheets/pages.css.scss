@@ -45,6 +45,9 @@ body{
   text-shadow: 1px 1px 1px #333;
   color: white;
 }
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand {
+  text-decoration: none;
+}
 .container{
   min-width: 1170px;
 }
