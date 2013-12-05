@@ -27,12 +27,12 @@
             %h4 NEXT SHOWING:
           .event-date
             - if @showing_date.is_a?(String)
-              = @showing_date
+              %h5= @showing_date
             - else
-              = "#{@showing_date.strftime('%^a %m/%d/%y')}"
+              %h5= "#{@showing_date.strftime('%^a %m/%d/%y')}"
         .event-content-wrapper
           .event-details
-            = "#{@showing_start_time.strftime('%l:%M %p')}-#{@showing_end_time.strftime('%l:%M %p')} @ #{@showing_location}"
+            %h5= "#{@showing_start_time.strftime('%l:%M %p')}-#{@showing_end_time.strftime('%l:%M %p')} @ #{@showing_location}"
           .event-title
             %h3= @showing_title
     #social.event-block{ :style => "background-image: url('#{@social_image}')" }
@@ -42,12 +42,12 @@
             %h4 NEXT MANGA SOCIAL:
           .event-date
             - if @social_date.is_a?(String)
-              = @social_date
+              %h5= @social_date
             - else
-              = "#{@social_date.strftime('%^a %m/%d/%y')}"
+              %h5= "#{@social_date.strftime('%^a %m/%d/%y')}"
         .event-content-wrapper
           .event-details
-            = "#{@social_start_time.strftime('%l:%M %p')}-#{@social_end_time.strftime('%l:%M %p')} @ #{@social_location}"
+            %h5= "#{@social_start_time.strftime('%l:%M %p')}-#{@social_end_time.strftime('%l:%M %p')} @ #{@social_location}"
           .event-title
             %h3= @social_title
     #game-night.event-block{ :style => "background-image: url('#{@game_night_image}')" }
@@ -57,12 +57,12 @@
             %h4 NEXT GAME NIGHT:
           .event-date
             - if @game_night_date.is_a?(String)
-              = @game_night_date
+              %h5= @game_night_date
             - else
-              = "#{@game_night_date.strftime('%^a %m/%d/%y')}"
+              %h5= "#{@game_night_date.strftime('%^a %m/%d/%y')}"
         .event-content-wrapper
           .event-details
-            = "#{@game_night_start_time.strftime('%l:%M %p')}-#{@game_night_end_time.strftime('%l:%M %p')} @ #{@game_night_location}"
+            %h5= "#{@game_night_start_time.strftime('%l:%M %p')}-#{@game_night_end_time.strftime('%l:%M %p')} @ #{@game_night_location}"
           .event-title
             %h3= @game_night_title
 #main-content
