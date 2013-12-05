@@ -10,7 +10,7 @@
           #announcement{ :style => "background-image: url('#{@site.default_carousel_one_image.url}')", :title => "#{@site.carousel_one_title}"}
       .item
         %a{:href => "#{@site.carousel_two_href}"}
-          #announcement{ :style => "background-image: url('#{@site.default_carousel_two_image.url}')", :title => "#{@site.carousel_two_title}"}
+          #announcement{ :style => "background-image: url('#{@site.default_carousel_two_image.url}');", :title => "#{@site.carousel_two_title}"}
       .item
         %a{:href => "#{@site.carousel_three_href}"}
           #announcement{ :style => "background-image: url('#{@site.default_carousel_three_image.url}')", :title => "#{@site.carousel_three_title}"}
@@ -20,7 +20,7 @@
       %span{:class => "glyphicon glyphicon-chevron-right"} 
 
   .events
-    #showing.event-block{ :style => "background-image: url('#{@showing_image}')" }
+    #showing.event-block{ :style => "background-image: url('#{@showing_image}'); background-size: cover; background-position: center;" }
       .event-content
         .event-details-top
           .event-type
@@ -35,7 +35,7 @@
             %h5= "#{@showing_start_time.strftime('%l:%M %p')}-#{@showing_end_time.strftime('%l:%M %p')} @ #{@showing_location}"
           .event-title
             %h3= @showing_title
-    #social.event-block{ :style => "background-image: url('#{@social_image}')" }
+    #social.event-block{ :style => "background-image: url('#{@social_image}'); background-size: cover; background-position: center;" }
       .event-content
         .event-details-top
           .event-type
@@ -50,7 +50,7 @@
             %h5= "#{@social_start_time.strftime('%l:%M %p')}-#{@social_end_time.strftime('%l:%M %p')} @ #{@social_location}"
           .event-title
             %h3= @social_title
-    #game-night.event-block{ :style => "background-image: url('#{@game_night_image}')" }
+    #game-night.event-block{ :style => "background-image: url('#{@game_night_image}'); background-size: cover; background-position: center;" }
       .event-content
         .event-details-top
           .event-type
@@ -79,4 +79,3 @@
           = "Posted on #{post.publish_date.strftime('%^a %m/%d/%y')} by #{post_author }"
         .post-text
           =post.text.html_safe
-  #something

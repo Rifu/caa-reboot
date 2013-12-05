@@ -10,17 +10,17 @@ ActiveAdmin.register Site do
       f.input :default_showing_description
       f.input :default_showing_time, :label => "Default showing start time", :as => :time_picker
       f.input :default_showing_end_time, :as => :time_picker
-      f.input :default_showing_image, :label => "Default showing image [330x180 px]", :as => :file, :hint => f.template.image_tag(f.object.default_showing_image.url)
+      f.input :default_showing_image, :label => "Default showing image [800x436 px]", :as => :file, :hint => f.template.image_tag(f.object.default_showing_image.url)
       f.input :default_social_location
       f.input :default_social_description
       f.input :default_social_time, :label => "Default social start time", :as => :time_picker
       f.input :default_social_end_time, :as => :time_picker
-      f.input :default_social_image, :label => "Default social image [330x180 px]", :as => :file, :hint => f.template.image_tag(f.object.default_social_image.url)
+      f.input :default_social_image, :label => "Default social image [800x436 px]", :as => :file, :hint => f.template.image_tag(f.object.default_social_image.url)
       f.input :default_game_night_location
       f.input :default_game_night_description
       f.input :default_game_night_time, :label => "Default game night start time", :as => :time_picker
       f.input :default_game_night_end_time, :as => :time_picker
-      f.input :default_game_night_image, :label => "Default game night image [330x180 px]", :as => :file, :hint => f.template.image_tag(f.object.default_game_night_image.url)
+      f.input :default_game_night_image, :label => "Default game night image [800x436 px]", :as => :file, :hint => f.template.image_tag(f.object.default_game_night_image.url)
       f.input :show_carousel, :as => :select
       f.input :carousel_one_href
       f.input :carousel_one_title
