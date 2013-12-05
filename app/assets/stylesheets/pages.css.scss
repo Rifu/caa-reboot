@@ -12,6 +12,7 @@ $hoveredSub: rgba(0,0,0,0.8);
 $font-size-base: 12px;
 $darkBG: #1d1d1d;
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
 // Drop shadows
 @mixin box-shadow {
@@ -41,7 +42,7 @@ $darkBG: #1d1d1d;
 }
 body{
   background: white;
-  text-shadow: #333 1px 1px 1px;
+  text-shadow: 1px 1px 1px #333;
   color: white;
 }
 .container{
@@ -53,6 +54,8 @@ body{
 h1, h2, h3, h4{
   margin-top: 0;
   margin-bottom: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 #content-container{
   padding-top: 60px;
@@ -124,6 +127,7 @@ h1, h2, h3, h4{
   }
   .post-details{
     font-size: 10px;
+    padding-top: 2px;
   }
 }
 .event-content{
@@ -163,6 +167,10 @@ h1, h2, h3, h4{
     }
   }
   .event-content-wrapper, .event-details-top{
-    transition: background 0.5s;
+    transition: background 0.4s;
   }
+}
+
+.carousel-control{
+  transition: opacity 0.4s;
 }
