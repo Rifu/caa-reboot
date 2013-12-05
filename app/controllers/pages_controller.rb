@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @social = Event.where("event_date >= ? AND event_type = ?", date, "mangasocial").order("event_date ASC").limit(1).first
     @game_night = Event.where("event_date >= ? AND event_type = ?", date, "gamenight").order("event_date ASC").limit(1).first
     @upcoming_events = Event.where("event_date > ?", date+1).order("event_date ASC")
-    @upcoming_events = @upcoming_events - [@showing, @social, @gamenight]
+    @upcoming_events = @upcoming_events - [@showing, @social, @game_night]
     # Pull data from event if it exists; otherwise pull from default values
     # Set default values in the admin interface
     if @showing.blank?
