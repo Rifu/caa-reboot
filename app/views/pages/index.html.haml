@@ -65,7 +65,7 @@
             %h5= "#{@game_night_start_time.strftime('%l:%M %p')}-#{@game_night_end_time.strftime('%l:%M %p')} @ #{@game_night_location}"
           .event-title
             %h3= @game_night_title
-#main-content
+#main-content.clearfix
   #news-posts
     - @posts.each do |post|
       .news-post
@@ -79,3 +79,22 @@
           = "Posted on #{post.publish_date.strftime('%^a %m/%d/%y')} by #{post_author }"
         .post-text
           =post.text.html_safe
+  .events#future-events
+    - @upcoming_events.each do |event|
+      .event-block[event]{ :style => "background-image: url('#{event.event_image.url}'); background-size: cover; background-position: center;" }
+        .event-content
+          .event-details-top
+            .event-type
+              -if event.event_type == 'showing'
+                %h4 FUTURE SHOWING:
+              -elsif event.event_type == 'mangasocial'
+                %h4 FUTURE MANGA SOCIAL:
+              -elsif event.event_type == 'gamenight'
+                %h4 FUTURE GAME NIGHT:
+            .event-date
+              %h5= "#{event.event_date.strftime('%^a %m/%d/%y')}"
+          .event-content-wrapper
+            .event-details
+              %h5= "#{event.event_start_time.strftime('%l:%M %p')}-#{event.event_end_time.strftime('%l:%M %p')} @ #{event.event_location}"
+            .event-title
+              %h3= event.title

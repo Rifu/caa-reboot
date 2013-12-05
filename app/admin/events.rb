@@ -1,6 +1,7 @@
 ActiveAdmin.register Event do
   index do
     column :title
+    column :event_date
     default_actions
   end
   form do |f|
@@ -11,7 +12,7 @@ ActiveAdmin.register Event do
       f.input :event_start_time, :as => :time_picker
       f.input :event_end_time, :as => :time_picker
       f.input :event_location
-      f.input :event_image_thin, :as => :file, :hint => f.template.image_tag(f.object.event_image_thin.url)
+      f.input :event_image, :label => "Event image [800x436 px]", :as => :file, :hint => f.template.image_tag(f.object.event_image.url)
     end
     f.actions
   end
