@@ -4,9 +4,9 @@ class PagesController < ApplicationController
     @posts = Post.order("publish_date DESC").all
     @site = Site.where(:default_site => true).first
     date = Date.today-1
-    @showing = Event.where("event_date >= ? AND event_type == ?", date, "showing").order("event_date ASC").limit(1).first
-    @social = Event.where("event_date >= ? AND event_type == ?", date, "mangasocial").order("event_date ASC").limit(1).first
-    @gamenight = Event.where("event_date >= ? AND event_type == ?", date, "gamenight").order("event_date ASC").limit(1).first
+    @showing = Event.where("event_date >= ? AND event_type = ?", date, "showing").order("event_date ASC").limit(1).first
+    @social = Event.where("event_date >= ? AND event_type = ?", date, "mangasocial").order("event_date ASC").limit(1).first
+    @gamenight = Event.where("event_date >= ? AND event_type = ?", date, "gamenight").order("event_date ASC").limit(1).first
     
     # Pull data from event if it exists; otherwise pull from default values
     # Set default values in the admin interface
