@@ -11,6 +11,7 @@ role :db,  "caa.ruuri.com", :primary => true # This is where Rails migrations wi
 default_run_options[:pty] = true
 set :use_sudo, false
 require "bundler/capistrano"
+load 'deploy/assets'
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
