@@ -19,52 +19,7 @@
     %a{:class => "right carousel-control", :href => "#announcement-carousel", :data => {'slide' => "next"}}
       %span{:class => "glyphicon glyphicon-chevron-right"} 
 
-  .events
-    #showing.event-block{ :style => "background-image: url('#{@showing_image}'); background-size: cover; background-position: center;" }
-      .event-content
-        .event-details-top
-          .event-type
-            %h4 NEXT SHOWING:
-          .event-date
-            - if @showing_date.is_a?(String)
-              %h5= @showing_date
-            - else
-              %h5= "#{@showing_date.strftime('%^a %m/%d/%y')}"
-        .event-content-wrapper
-          .event-details
-            %h5= "#{@showing_start_time.strftime('%l:%M %p')}-#{@showing_end_time.strftime('%l:%M %p')} @ #{@showing_location}"
-          .event-title
-            %h3= @showing_title
-    #social.event-block{ :style => "background-image: url('#{@social_image}'); background-size: cover; background-position: center;" }
-      .event-content
-        .event-details-top
-          .event-type
-            %h4 NEXT MANGA SOCIAL:
-          .event-date
-            - if @social_date.is_a?(String)
-              %h5= @social_date
-            - else
-              %h5= "#{@social_date.strftime('%^a %m/%d/%y')}"
-        .event-content-wrapper
-          .event-details
-            %h5= "#{@social_start_time.strftime('%l:%M %p')}-#{@social_end_time.strftime('%l:%M %p')} @ #{@social_location}"
-          .event-title
-            %h3= @social_title
-    #game-night.event-block{ :style => "background-image: url('#{@game_night_image}'); background-size: cover; background-position: center;" }
-      .event-content
-        .event-details-top
-          .event-type
-            %h4 NEXT GAME NIGHT:
-          .event-date
-            - if @game_night_date.is_a?(String)
-              %h5= @game_night_date
-            - else
-              %h5= "#{@game_night_date.strftime('%^a %m/%d/%y')}"
-        .event-content-wrapper
-          .event-details
-            %h5= "#{@game_night_start_time.strftime('%l:%M %p')}-#{@game_night_end_time.strftime('%l:%M %p')} @ #{@game_night_location}"
-          .event-title
-            %h3= @game_night_title
+  = render "events"
 #main-content.clearfix
   #news-posts
     - @posts.each do |post|
