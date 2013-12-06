@@ -1,0 +1,26 @@
+// Place all the styles related to the Schedules controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+  
+#showing-schedule{
+  overflow: hidden;
+  width: 800px;
+  float:left;
+}
+.showing-row{
+  height: 100px;
+  color: white;
+  text-shadow: 1px 1px 1px #333;
+}
+.showing-details{
+  margin: 0;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+}
+.detail{
+  overflow: hidden;
+  max-height: 50px;
+}
+.showing-thumb{
+}

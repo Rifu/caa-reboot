@@ -9,4 +9,7 @@ class PagesController < ApplicationController
   def show
     @page = Page.find(params[:id])
   end
+
+  def schedule
+  end
 end

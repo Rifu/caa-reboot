@@ -1,5 +1,6 @@
 CaaReboot::Application.routes.draw do
   root to: "pages#index"
+  resources :schedules
   resources :pages
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -3,4 +3,5 @@ class Event < ActiveRecord::Base
                   :event_start_time, :event_end_time
   has_attached_file :event_image
   has_attached_file :event_image_thin
+  belongs_to :schedule
 end

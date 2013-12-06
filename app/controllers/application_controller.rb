@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   private
   def load_defaults
     @site = Site.where(:default_site => true).first
+    @current_schedule = Schedule.find(@site.current_schedule)
     date = Date.today-1
     @showing = Event.where("event_date >= ? AND event_type = ?", date, "showing").order("event_date ASC").limit(1).first
     @social = Event.where("event_date >= ? AND event_type = ?", date, "mangasocial").order("event_date ASC").limit(1).first

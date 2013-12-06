@@ -1,0 +1,16 @@
+#main-content
+  #news-posts
+    .post-title
+      %h1=@schedule.title
+    #showings
+      - @schedule.events.each do |showing|
+        .showing-row
+          .showing-details.row
+            .col-xs-3.showing-thumb{ :style => "background-image: url('#{showing.event_image}'); background-size: cover; background-position: center;" } .
+            .col-xs-3.detail
+              %h3= showing.event_date.strftime("%b %d")
+            .col-xs-3.detail
+              %h3= showing.title
+            .col-xs-3.detail
+              %h3= showing.event_location
+  =render "pages/events"

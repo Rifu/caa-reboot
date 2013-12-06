@@ -6,6 +6,11 @@ ActiveAdmin.register Site do
   form do |f|
     f.inputs "Details" do
       f.input :title
+      f.input :current_schedule, :as => :select, :collection => Schedule.all
+      f.input :default_site, :as => :select
+    end
+    f.actions
+    f.inputs "Defaults" do
       f.input :default_showing_location
       f.input :default_showing_description
       f.input :default_showing_time, :label => "Default showing start time", :as => :time_picker
@@ -31,7 +36,6 @@ ActiveAdmin.register Site do
       f.input :carousel_three_href
       f.input :carousel_three_title
       f.input :default_carousel_three_image, :label => "Default carousel image three [880x560 px]", :as => :file, :hint => f.template.image_tag(f.object.default_carousel_three_image.url)
-      f.input :default_site, :as => :select
     end
     f.actions
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131206015314) do
+ActiveRecord::Schema.define(:version => 20131206111855) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20131206015314) do
     t.datetime "event_image_thin_updated_at"
     t.time     "event_start_time"
     t.time     "event_end_time"
+    t.integer  "schedule_id"
   end
 
   create_table "pages", :force => true do |t|
@@ -84,6 +85,16 @@ ActiveRecord::Schema.define(:version => 20131206015314) do
     t.datetime "updated_at",   :null => false
     t.date     "publish_date"
   end
+
+  create_table "schedules", :force => true do |t|
+    t.integer  "site_id"
+    t.string   "title"
+    t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "schedules", ["site_id"], :name => "index_schedules_on_site_id"
 
   create_table "sites", :force => true do |t|
     t.string   "title"
@@ -133,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20131206015314) do
     t.time     "default_showing_end_time"
     t.time     "default_social_end_time"
     t.time     "default_game_night_end_time"
+    t.string   "current_schedule"
   end
 
 end
