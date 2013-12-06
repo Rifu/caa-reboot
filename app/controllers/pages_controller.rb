@@ -58,6 +58,9 @@ class PagesController < ApplicationController
       @game_night_location = @game_night.event_location
       @game_night_title = @game_night.title
     end
+  end
 
+  def show
+    @page = Page.find(params[:id])
   end
 end
