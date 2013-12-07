@@ -1,14 +1,19 @@
 #main-content
   #news-posts
-    .post-title
-      %h1=@schedule.title
-    #showings
-      - @schedule.events.each do |showing|
-        .showing-row
-          .showing-thumb{ :style => "background-image: url('#{showing.event_image}'); background-size: cover; background-position: center;" }
-            .showing-details.pull-left
-              .showing-wrapper
-                %h3= "#{showing.event_date.strftime("%b %d")} @ #{showing.event_location}"
-                %h1= showing.title
-            .showing-hacks
+    .news-post
+      .post-title
+        %h1=@schedule.title
+      #showings
+        - @schedule.events.each do |showing|
+          .showing-row
+            .showing-thumb{ :style => "background-image: url('#{showing.event_image}'); background-size: cover; background-position: center;" }
+              .showing-details.pull-left
+                .showing-wrapper
+                  %h3= "#{showing.event_date.strftime("%b %d")} @ #{showing.event_location}"
+                  %h1= showing.title
+              .showing-hacks
+      #weeklies
+        .weekly-row
+          .showing-row#weekly-one-thumb{ :style => "background-image: url('#{@schedule.weekly_one_image}'); background-size: cover; background-position: center;" }
+          .showing-row#weekly-two-thumb{ :style => "background-image: url('#{@schedule.weekly_two_image}'); background-size: cover; background-position: center;" }
   =render "pages/events"

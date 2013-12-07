@@ -33,9 +33,20 @@ $shadowItem: 0 3px 3px rgba(0,0,0,.50);
   }
   &:hover{
     .showing-hacks{
-      width: 800px;
+      width: 100%;
+      transition: width 0.7s;
     }
   }
+}
+#weekly-one-thumb{
+  width: 49%;
+  margin-right: 5px;
+  float: left;
+}
+#weekly-two-thumb{
+  width: 49%;
+  margin-left: 5px;
+  float: left;
 }
 .detail{
   overflow: hidden;
@@ -54,5 +65,5 @@ $shadowItem: 0 3px 3px rgba(0,0,0,.50);
   position: absolute;
   background: rgba(0, 0, 0, 0.8);
   top: 0;
-  transition: width 0.7s;
+  transition: width 3s;
 }
