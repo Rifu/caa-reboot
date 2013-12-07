@@ -1,26 +1,58 @@
 // Place all the styles related to the Schedules controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-  
+$rowheight: 67px;
+$shadowItem: 0 3px 3px rgba(0,0,0,.50);
+@mixin box-shadow {
+  -webkit-box-shadow: $shadowItem;
+     -moz-box-shadow: $shadowItem;
+          box-shadow: $shadowItem;
+}
 #showing-schedule{
   overflow: hidden;
   width: 800px;
   float:left;
 }
 .showing-row{
-  height: 100px;
+  height: $rowheight;
   color: white;
   text-shadow: 1px 1px 1px #333;
-}
-.showing-details{
-  margin: 0;
-  height: 70px;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 5px;
+  position: relative;
+  @include box-shadow;
+  margin-top: 10px;
+  .showing-details{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    height: $rowheight;
+    max-height: $rowheight;
+    overflow: hidden;
+    padding: 5px;
+  }
+  &:hover{
+    .showing-hacks{
+      width: 800px;
+    }
+  }
 }
 .detail{
   overflow: hidden;
   max-height: 50px;
 }
 .showing-thumb{
+  height: $rowheight;
+}
+.showing-wrapper{
+  width: 100%;
+}
+.showing-hacks{
+  z-index: 1;
+  height: $rowheight;
+  width: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  transition: width 0.7s;
 }

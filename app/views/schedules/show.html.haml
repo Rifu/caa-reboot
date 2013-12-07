@@ -5,12 +5,10 @@
     #showings
       - @schedule.events.each do |showing|
         .showing-row
-          .showing-details.row
-            .col-xs-3.showing-thumb{ :style => "background-image: url('#{showing.event_image}'); background-size: cover; background-position: center;" } .
-            .col-xs-3.detail
-              %h3= showing.event_date.strftime("%b %d")
-            .col-xs-3.detail
-              %h3= showing.title
-            .col-xs-3.detail
-              %h3= showing.event_location
+          .showing-thumb{ :style => "background-image: url('#{showing.event_image}'); background-size: cover; background-position: center;" }
+            .showing-details.pull-left
+              .showing-wrapper
+                %h3= "#{showing.event_date.strftime("%b %d")} @ #{showing.event_location}"
+                %h1= showing.title
+            .showing-hacks
   =render "pages/events"
