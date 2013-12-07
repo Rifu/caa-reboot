@@ -38,15 +38,27 @@ $shadowItem: 0 3px 3px rgba(0,0,0,.50);
     }
   }
 }
+#weeklies{
+  padding-top: 10px;
+  .post-title{
+    h2{
+      font-weight: 300;
+    }
+  }
+}
+.weekly-row{
+  .title{
+    position: absolute;
+    bottom: 0;
+  }
+}
 #weekly-one-thumb{
-  width: 49%;
-  margin-right: 5px;
+  width: 49.2%;
   float: left;
 }
 #weekly-two-thumb{
-  width: 49%;
-  margin-left: 5px;
-  float: left;
+  width: 49.5%;
+  float: right;
 }
 .detail{
   overflow: hidden;

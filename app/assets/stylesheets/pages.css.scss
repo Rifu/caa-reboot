@@ -51,6 +51,10 @@ $darkBG: #1d1d1d;
   #announcement-carousel{
     width: 100% !important
   }
+  //Schedule fixes
+  .weekly-item{
+    width: 100% !important;
+  }
 }
 @media (max-width: 360px){
   .events{
