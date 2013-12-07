@@ -25,4 +25,16 @@
             .showing-details.pull-left
               %h2.title= @schedule.weekly_two
             .showing-hacks
+    -if !@schedule_archive.blank?
+      .news-post
+        #schedule-archive.clearfix
+          .post-title
+            %h1 Schedule Archive
+          .archives
+            %ul
+              - @schedule_archive.each do |archive|
+                %li= link_to archive.title, archive
+
+
+
   =render "pages/events"
