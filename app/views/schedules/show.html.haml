@@ -12,9 +12,10 @@
                   %h3= "#{showing.event_date.strftime("%b %d")} @ #{showing.event_location}"
                   %h1= showing.title
               .showing-hacks
+    .news-post  
       #weeklies.clearfix
         .post-title
-          %h2 Weeklies:
+          %h1 Weeklies
         .weekly-row
           .showing-row#weekly-one-thumb.weekly-item{ :style => "background-image: url('#{@schedule.weekly_one_image}'); background-size: cover; background-position: center;" }
             .showing-details.pull-left
