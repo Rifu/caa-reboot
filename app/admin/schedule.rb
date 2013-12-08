@@ -11,6 +11,7 @@ ActiveAdmin.register Schedule do
       f.input :weekly_one_image, :label => "Weekly one image [800x436 px]", :as => :file, :hint => f.template.image_tag(f.object.weekly_one_image.url)
       f.input :weekly_two
       f.input :weekly_two_image, :label => "Weekly two image [800x436 px]", :as => :file, :hint => f.template.image_tag(f.object.weekly_two_image.url)
+      f.input :marathon_schedule, :as => :html_editor
     end
     f.actions
   end

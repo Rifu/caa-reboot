@@ -25,12 +25,19 @@
             .showing-details.pull-left
               %h2.title= @schedule.weekly_two
             .showing-hacks
+    -if !@schedule.marathon_schedule.blank?
+      .news-post
+        #marathon-schedule.clearfix
+          .post-title
+            %h1 Marathon Schedule
+          .schedule-content
+            = @schedule.marathon_schedule.html_safe
     -if !@schedule_archive.blank?
       .news-post
         #schedule-archive.clearfix
           .post-title
             %h1 Schedule Archive
-          .archives
+          .schedule-content
             %ul
               - @schedule_archive.each do |archive|
                 %li= link_to archive.title, archive
