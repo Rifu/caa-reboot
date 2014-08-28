@@ -47,4 +47,4 @@ load 'deploy/assets'
 #  end
 #end
 
-after "deploy", "deploy:migrate"
+#after "deploy", "deploy:migrate"
