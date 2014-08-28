@@ -24,4 +24,4 @@ production:
   database: caa_production
   pool: 5
   username: rails
-  password: <%= ENV['MYSQL_PASSWORD'] %>
+  password: 'banana'
