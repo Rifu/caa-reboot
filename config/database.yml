@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: sqlite3
-  database: db/development.sqlite3
+  database: db/blank.sqlite3
   pool: 5
   timeout: 5000
 
@@ -19,10 +19,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
   database: caa_production
   pool: 5
-  username: ruuri_db
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  username: rails
+  password: <%= ENV['MYSQL_PASSWORD'] %>
   host: localhost
