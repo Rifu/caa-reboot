@@ -1,4 +1,6 @@
 ActiveAdmin.register Site do
+  actions :all, except: [:destroy, :new]
+  config.filters = false
   index do
     column :title
     default_actions

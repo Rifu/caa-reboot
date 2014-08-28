@@ -1,4 +1,5 @@
 ActiveAdmin.register Schedule do
+  filter :title
   index do
     column :title
     default_actions

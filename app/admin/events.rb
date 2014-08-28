@@ -1,4 +1,5 @@
 ActiveAdmin.register Event do
+  filter :title
   index do
     column :title
     column :event_date
