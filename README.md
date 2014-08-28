@@ -31,7 +31,7 @@ Might need to install imagemagick actually. If so:
 sudo apt-get install imagemagick libmagickcore-dev libmagickwand-dev
 
 #### Initialization
-Believe in capistrano
+Believe in capistrano 2
 
 cap deploy
 
